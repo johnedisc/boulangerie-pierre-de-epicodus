@@ -24,13 +24,13 @@ namespace Boulangerie.Tests
       Assert.AreEqual(test, newPastry.OrderQuantity);
     }
 
-//    [TestMethod]
-//    public void CalculatePastryCost_ReturnsPastryCostWithDiscount_Int()
-//    {
-//      Pastry newPastry = new Pastry(7);
-//      int expectedResult = 25;
-//      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost());
-//    }
+    [TestMethod]
+    public void CalculatePastryCost_ReturnsPastryCostWithDiscount_Int()
+    {
+      Pastry newPastry = new Pastry(6);
+      int expectedResult = 10;
+      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost());
+    }
 
   }
 }

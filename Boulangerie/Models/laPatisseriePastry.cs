@@ -11,24 +11,24 @@ namespace Boulangerie.Models
       get { return _orderQuantity; }
       set { _orderQuantity = value; }
     }
-//    private int _breadUnitCost = 5;
-//    public int BreadUnitCost
-//    {
-//      get { return _breadUnitCost; }
-//      set { _breadUnitCost = value; }
-//    }
+    private int _pastryUnitCost = 2;
+    public int PastryUnitCost
+    {
+      get { return _pastryUnitCost; }
+      set { _pastryUnitCost = value; }
+    }
 
     public Pastry(int clientOrder)
     {
       _orderQuantity = clientOrder;
     }
 
-//    public int CalculateBreadCost()
-//    {
-//      int groupsOf3 = _orderQuantity / 3;
-//      int totalBreadCost = _breadUnitCost * ((2 * groupsOf3) + (_orderQuantity-(groupsOf3) * 3));
-//      return totalBreadCost;
-//    }
+    public int CalculatePastryCost()
+    {
+      int groupsOf4 = _orderQuantity / 4;
+      int totalPastryCost = _pastryUnitCost * ((3 * groupsOf4) + (_orderQuantity-(groupsOf4) * 4));
+      return totalPastryCost;
+    }
 
   }
 }
