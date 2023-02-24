@@ -11,8 +11,8 @@ namespace Boulangerie.Models
       get { return _orderQuantity; }
       set { _orderQuantity = value; }
     }
-    private int _breadUnitCost = 5;
-    public int BreadUnitCost
+    static private int _breadUnitCost = 5;
+    static public int BreadUnitCost
     {
       get { return _breadUnitCost; }
       set { _breadUnitCost = value; }
