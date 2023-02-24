@@ -16,14 +16,14 @@ namespace Boulangerie.Tests
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
 
-//    [TestMethod]
-//    public void PastryConstructor_ReturnsNumberOfPastrysWanted_Int()
-//    {
-//      Pastry newPastry = new Pastry(1);
-//      int test = 1;
-//      Assert.AreEqual(test, newPastry.OrderQuantity);
-//    }
-//
+    [TestMethod]
+    public void PastryConstructor_ReturnsNumberOfPastrysWanted_Int()
+    {
+      Pastry newPastry = new Pastry(1);
+      int test = 1;
+      Assert.AreEqual(test, newPastry.OrderQuantity);
+    }
+
 //    [TestMethod]
 //    public void CalculatePastryCost_ReturnsPastryCostWithDiscount_Int()
 //    {
