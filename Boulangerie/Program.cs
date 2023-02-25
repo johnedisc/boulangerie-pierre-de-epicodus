@@ -14,7 +14,6 @@ namespace Boulangerie
       Console.WriteLine("bienvenue à la boulangerie Pierre de Epicodus!");
       langHandler();
 
-      Bread newBread = new Bread(7);
     }
 
     static void langHandler()
@@ -55,6 +54,7 @@ namespace Boulangerie
       Console.WriteLine("today's pastries are: ${0}. buy 3, get one free.", Pastry.PastryUnitCost);
       Console.WriteLine("and bread is: ${0}. buy 2, get one free.", Bread.BreadUnitCost);
       List<int> order = new List<int>(takeOrder("en"));
+      Bread newBread = new Bread(7);
     }
     
     static void English()
