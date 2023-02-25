@@ -51,21 +51,32 @@ namespace Boulangerie
 
     static void French()
     {
-      Console.WriteLine("today's pastries are: ${0}. buy 3, get one free.", Pastry.PastryUnitCost);
-      Console.WriteLine("and bread is: ${0}. buy 2, get one free.", Bread.BreadUnitCost);
-      List<int> order = new List<int>(takeOrder("en"));
-      Bread newBread = new Bread(7);
+      Console.WriteLine("coût des pâtisseries: ${0}. acheter 3, un gratuit.", Pastry.PastryUnitCost);
+      Console.WriteLine("and bread is: ${0}. acheter 2, un gratuit.", Bread.BreadUnitCost);
+      List<int> order = new List<int>(takeOrder("fr"));
+      Pastry newPastryOrder = new Pastry(order[0]);
+      Bread newBreadOrder = new Bread(order[1]);
+      Pastry newPastryOrder = new Pastry(order[0]);
+      Bread newBreadOrder = new Bread(order[1]);
+      Console.WriteLine($"coût total ${newPastryOrder.CalculatePastryCost() + newBreadOrder.CalculateBreadCost()}");
+      Console.WriteLine($"${newPastryOrder.CalculatePastryCost()} pour {newPastryOrder.OrderQuantity} pâtisseries et ${newBreadOrder.CalculateBreadCost()} pour {newBreadOrder.OrderQuantity} miches de pain.");
+      Console.WriteLine("au revoir!");
     }
     
     static void English()
     {
-          Console.WriteLine("Nous ne servons pas les clients qui ne peuvent pas parler français");
-          Console.WriteLine("redirection.........");
-          Thread.Sleep(2000);
-          Console.WriteLine("welcome to generic uninteresting American pastries.");
-          Console.WriteLine("today's pastries are: ${0}. buy 3, get one free.", Pastry.PastryUnitCost);
-          Console.WriteLine("and bread is: ${0}. buy 2, get one free.", Bread.BreadUnitCost);
-          List<int> order = new List<int>(takeOrder("en"));
+      Console.WriteLine("Nous ne servons pas les clients qui ne peuvent pas parler français");
+      Console.WriteLine("redirection.........");
+      Thread.Sleep(2000);
+      Console.WriteLine("welcome to generic uninteresting American pastries.");
+      Console.WriteLine("today's pastries are: ${0}. buy 3, get one free.", Pastry.PastryUnitCost);
+      Console.WriteLine("and bread is: ${0}. buy 2, get one free.", Bread.BreadUnitCost);
+      List<int> order = new List<int>(takeOrder("en"));
+      Pastry newPastryOrder = new Pastry(order[0]);
+      Bread newBreadOrder = new Bread(order[1]);
+      Console.WriteLine($"your total is ${newPastryOrder.CalculatePastryCost() + newBreadOrder.CalculateBreadCost()}");
+      Console.WriteLine($"${newPastryOrder.CalculatePastryCost()} for {newPastryOrder.OrderQuantity} pastries and ${newBreadOrder.CalculateBreadCost()} for {newBreadOrder.OrderQuantity} loaves of bread.");
+      Console.WriteLine("thank you. bye.");
     }
 
     static List<int> takeOrder(string language)
@@ -83,11 +94,11 @@ namespace Boulangerie
       }
       else
       {
-        Console.WriteLine("how many pastries can we get you?");
-        Console.WriteLine("(choose an integer greater than or equal to 0)");
+        Console.WriteLine("combien de pâtisseries aimeriez-vous?");
+        Console.WriteLine("(zéro ou plus)");
         order.Add(ValidateInteger(Console.ReadLine()));
-        Console.WriteLine("how many loaves of bread can we get you?");
-        Console.WriteLine("(choose an integer greater than or equal to 0)");
+        Console.WriteLine("combien de pains aimeriez-vous?");
+        Console.WriteLine("(zéro ou plus)");
         order.Add(ValidateInteger(Console.ReadLine()));
         return order;
       }
