@@ -20,33 +20,39 @@ namespace Boulangerie
     {
       Console.WriteLine("pour le français entrez 1");
       Console.WriteLine("for english enter 2");
+      int langSelect = ValidateInteger(Console.ReadLine(), "langHandler");
+      if (langSelect == 1)
+      {
+        French();
+      }
+      else if (langSelect == 2)
+      {
+        English();
+      }
+      else
+      {
+        Console.WriteLine("Please enter 1 or 2");
+        langHandler();
+      }
+    }
+
+    static bool ValidateInteger(string usrValue,string originalFunc)
+    {
       try
       {
-        int langSelect = Int32.Parse(Console.ReadLine());
-        if (langSelect == 1)
-        {
-          French();
-        }
-        else if (langSelect == 2)
-        {
-          English();
-        }
-        else
-        {
-            Console.WriteLine("Please enter 1 or 2");
-            langHandler();
-        }
+        int test = Int32.Parse(usrValue);
+        return true;
       }
       catch (FormatException ex)
       {
-        Console.WriteLine("{0} please enter 1 or 2", ex.Message);
-        langHandler();
+        Console.WriteLine("{0} please enter an integer", ex.Message);
       }
     }
 
     static void French()
     {
           Console.WriteLine("francais");
+          originalFunc();
     }
     
     static void English()
@@ -57,6 +63,10 @@ namespace Boulangerie
           Console.WriteLine("welcome to generic uninteresting American pastries.");
           Console.WriteLine("today's pastries are: ${0}. buy 3, get one free.", Pastry.PastryUnitCost);
           Console.WriteLine("and bread is: ${0}. buy 2, get one free.", Bread.BreadUnitCost);
+          Console.WriteLine("how many pastries can we get you?");
+          Console.WriteLine("(choose an integer greater than or equal to 0)");
+          Console.WriteLine("how many loaves of bread can we get you?");
+          Console.WriteLine("(choose an integer greater than or equal to 0)");
     }
 
   }
