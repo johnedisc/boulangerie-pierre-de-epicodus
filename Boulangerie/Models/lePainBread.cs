@@ -5,29 +5,26 @@ namespace Boulangerie.Models
 {
   public class Bread
   {
-    private int _orderQuantity;
-    public int OrderQuantity
-    {
-      get { return _orderQuantity; }
-      set { _orderQuantity = value; }
-    }
-    static private int _breadUnitCost = 5;
-    static public int BreadUnitCost
-    {
-      get { return _breadUnitCost; }
-      set { _breadUnitCost = value; }
-    }
+    public int OrderQuantity { get; set; }
+    static public int BreadUnitCost { get; set; } = 5;
 
     public Bread(int clientOrder)
     {
-      _orderQuantity = clientOrder;
+      OrderQuantity = clientOrder;
     }
 
-    public int CalculateBreadCost()
+    public int CalculateBreadCost(string costType)
     {
-      int groupsOf3 = _orderQuantity / 3;
-      int totalBreadCost = _breadUnitCost * ((2 * groupsOf3) + (_orderQuantity-(groupsOf3) * 3));
+      if (costType == "flat")
+      {
+        return BreadUnitCost * OrderQuantity;
+      }
+      else
+      {
+      int groupsOf3 = OrderQuantity / 3;
+      int totalBreadCost = BreadUnitCost * ((2 * groupsOf3) + (OrderQuantity-(groupsOf3) * 3));
       return totalBreadCost;
+      }
     }
   }
 }
