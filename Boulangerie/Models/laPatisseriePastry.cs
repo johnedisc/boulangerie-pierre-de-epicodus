@@ -13,18 +13,16 @@ namespace Boulangerie.Models
       OrderQuantity = clientOrder;
     }
 
-    public int CalculatePastryCost(string costType)
+    public int CalculatePastryCostFlatRate()
     {
-      if (costType == "flat")
-      {
-        return PastryUnitCost * OrderQuantity;
-      }
-      else
-      {
-        int groupsOf4 = OrderQuantity / 4;
-        int totalPastryCost = PastryUnitCost * ((3 * groupsOf4) + (OrderQuantity-(groupsOf4) * 4));
-        return totalPastryCost;
-      }
+      return PastryUnitCost * OrderQuantity;
+    }
+
+    public int CalculatePastryCost()
+    {
+      int groupsOf4 = OrderQuantity / 4;
+      int totalPastryCost = PastryUnitCost * ((3 * groupsOf4) + (OrderQuantity-(groupsOf4) * 4));
+      return totalPastryCost;
     }
 
   }

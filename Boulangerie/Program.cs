@@ -56,8 +56,8 @@ namespace Boulangerie
       List<int> order = new List<int>(takeOrder("fr"));
       Pastry newPastryOrder = new Pastry(order[0]);
       Bread newBreadOrder = new Bread(order[1]);
-      Console.WriteLine($"coût: ${newPastryOrder.CalculatePastryCost("discount") + newBreadOrder.CalculateBreadCost("discount")}");
-      Console.WriteLine($"${newPastryOrder.CalculatePastryCost("discount")} pour {newPastryOrder.OrderQuantity} pâtisseries et ${newBreadOrder.CalculateBreadCost("discount")} pour {newBreadOrder.OrderQuantity} miches de pain.");
+      Console.WriteLine($"coût: ${newPastryOrder.CalculatePastryCost() + newBreadOrder.CalculateBreadCost()}");
+      Console.WriteLine($"${newPastryOrder.CalculatePastryCost()} pour {newPastryOrder.OrderQuantity} pâtisseries et ${newBreadOrder.CalculateBreadCost()} pour {newBreadOrder.OrderQuantity} miches de pain.");
       Console.WriteLine("au revoir!");
     }
     
@@ -72,8 +72,8 @@ namespace Boulangerie
       List<int> order = new List<int>(takeOrder("en"));
       Pastry newPastryOrder = new Pastry(order[0]);
       Bread newBreadOrder = new Bread(order[1]);
-      Console.WriteLine($"your total is ${newPastryOrder.CalculatePastryCost("discount") + newBreadOrder.CalculateBreadCost("discount")}");
-      Console.WriteLine($"${newPastryOrder.CalculatePastryCost("discount")} for {newPastryOrder.OrderQuantity} pastries and ${newBreadOrder.CalculateBreadCost("discount")} for {newBreadOrder.OrderQuantity} loaves of bread.");
+      Console.WriteLine($"your total is ${newPastryOrder.CalculatePastryCost() + newBreadOrder.CalculateBreadCost()}");
+      Console.WriteLine($"${newPastryOrder.CalculatePastryCost()} for {newPastryOrder.OrderQuantity} pastries and ${newBreadOrder.CalculateBreadCost()} for {newBreadOrder.OrderQuantity} loaves of bread.");
       Console.WriteLine("thank you. bye.");
     }
 

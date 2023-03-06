@@ -27,7 +27,7 @@ namespace Boulangerie.Tests
     {
       Bread newBread = new Bread(7);
       int expectedResult = 35;
-      Assert.AreEqual(expectedResult, newBread.CalculateBreadCost("Flat"));
+      Assert.AreEqual(expectedResult, newBread.CalculateBreadCostFlatRate());
     }
 
     [TestMethod]
@@ -35,7 +35,7 @@ namespace Boulangerie.Tests
     {
       Bread newBread = new Bread(7);
       int expectedResult = 25;
-      Assert.AreEqual(expectedResult, newBread.CalculateBreadCost("Discount"));
+      Assert.AreEqual(expectedResult, newBread.CalculateBreadCost());
     }
 
   }

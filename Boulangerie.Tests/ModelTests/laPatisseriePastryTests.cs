@@ -29,7 +29,7 @@ namespace Boulangerie.Tests
     {
       Pastry newPastry = new Pastry(6);
       int expectedResult = 12;
-      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost("flat"));
+      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCostFlatRate());
     }
 
     [TestMethod]
@@ -37,7 +37,7 @@ namespace Boulangerie.Tests
     {
       Pastry newPastry = new Pastry(6);
       int expectedResult = 10;
-      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost("discount"));
+      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost());
     }
 
   }
