@@ -27,9 +27,9 @@ namespace Boulangerie.Tests
     [TestMethod]
     public void CalculatePastryCost_ReturnsPastryCostBeforeDiscount_Int()
     {
-      Pastry newPastry = new Pastry(6);
-      int expectedResult = 12;
-      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCostFlatRate());
+      Pastry newPastry = new Pastry(3);
+      int expectedResult = 6;
+      Assert.AreEqual(expectedResult, newPastry.CalculatePastryCost());
     }
 
     [TestMethod]

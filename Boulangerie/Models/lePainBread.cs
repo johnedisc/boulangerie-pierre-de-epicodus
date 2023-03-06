@@ -13,11 +13,6 @@ namespace Boulangerie.Models
       OrderQuantity = clientOrder;
     }
 
-    public int CalculateBreadCostFlatRate()
-    {
-      return BreadUnitCost * OrderQuantity;
-    }
-
     public int CalculateBreadCost()
     {
       int groupsOf3 = OrderQuantity / 3;

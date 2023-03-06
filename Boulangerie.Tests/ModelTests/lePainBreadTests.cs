@@ -23,11 +23,11 @@ namespace Boulangerie.Tests
     }
 
     [TestMethod]
-    public void CalculateBreadCost_ReturnsBreadCostWithoutDiscount_Int()
+    public void CalculateBreadCost_ReturnsBreadCostBeforeDiscount_Int()
     {
-      Bread newBread = new Bread(7);
-      int expectedResult = 35;
-      Assert.AreEqual(expectedResult, newBread.CalculateBreadCostFlatRate());
+      Bread newBread = new Bread(2);
+      int expectedResult = 10;
+      Assert.AreEqual(expectedResult, newBread.CalculateBreadCost());
     }
 
     [TestMethod]
